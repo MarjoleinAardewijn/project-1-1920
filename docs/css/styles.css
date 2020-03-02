@@ -1,79 +1,278 @@
 :root {
   --dark: #000;
   --course: #00CD84;
-  --light: #fff;
+  --light: #f5f5f5;
+
+  --opacity-background-aminal-cards: 0.25;
+
+  --monkey: 37, 38%, 58%;
+  --bear: 15, 36%, 36%;
+  --buffalo: 15, 36%, 36%;
+  --flamingo: 352, 62%, 73%;
+  --goat: 180, 8%, 66%;
+  --chameleon: 96, 43%, 46%;
+  --cat: 37, 69%, 53%;
+  --koala: 0, 0%, 69%;
+  --crocodile: 122, 27%, 54%;
+  --jellyfish: 3, 44%, 85%;
+  --quail: 186, 37%, 64%;
+  --lion: 37, 69%, 53%;
+  --mouse: 199, 54%, 80%;
+  --hippo: 188, 36%, 74%;
+  --elephant: 188, 35%, 78%;
+  --pinguine: 60, 1%, 13%;
+  --tiger: 26, 63%, 50%;
+  --owl: 34, 35%, 47%;
+  --bat: 0, 0%, 50%;
+  --wale: 198, 55%, 61%;
+  --singing-bird: 199, 54%, 80%;
+  --zebra: 0, 0%, 34%;
+  --seal: 320, 3%, 57%;
 }
-body {
-  background-color: var(--dark);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-  color: var(--light);
-  font-family: monospace;
-  font-size: 1.5em;
-  line-height: 1.5;
+
+* {
   margin: 0;
 }
+
+body {
+  background-color: var(--light);
+  color: var(--light);
+  font-family: Roboto, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5;
+  /*margin: 0;*/
+}
+
 main {
-  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 80%;
   margin: 10vh auto;
 }
-header {
-  background: var(--course);
-  color: var(--dark);
-  height: 30vh;
+
+.card {
+  width: 150px;
+  height: 150px;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  border-radius: 50%;
+
+  margin: 1.5rem;
 }
-h1 {
-  font-size: 5em;
+
+.text {
+  display: none;
+
+  text-transform: uppercase;
+  font-size: 26px;
 }
-h2 {
-  font-size: 2em;
-  margin-top: 1.5em;
-}
-ul {
+
+.card:hover .text{
+  position: absolute;
   display: flex;
-  /flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 -1rem;
-}
-ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-ul img {
-  border: 2px solid var(--light);
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-img {
-  max-width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: inherit;
+  height: inherit;
 }
 
-section#lecturers img {
-  border-radius: 100%;
-  margin-right: 1em;
+.text--monkey {
+  color: hsl(var(--monkey));
 }
 
-.button {
-  background: var(--light);
-  color: var(--dark);
-  padding: 1em;
+.text--bear {
+  color: hsl(var(--bear));
 }
 
-.examples img {
-  max-width: 25vh;
+.text--buffalo {
+  color: hsl(var(--buffalo));
 }
 
-a,
-a:visited {
-  color: var(--course);
+.text--flamingo {
+  color: hsl(var(--flamingo));
 }
 
-footer {
-  font-style: italic;
+.text--goat {
+  color: hsl(var(--goat));
 }
+
+.text--chameleon {
+  color: hsl(var(--chameleon));
+}
+
+.text--cat {
+  color: hsl(var(--cat));
+}
+
+.text--koala {
+  color: hsl(var(--koala));
+}
+
+.text--crocodile {
+  color: hsl(var(--crocodile));
+}
+
+.text--jellyfish {
+  color: hsl(var(--jellyfish));
+}
+
+.text--quail {
+  color: hsl(var(--quail));
+}
+
+.text--lion {
+  color: hsl(var(--lion));
+}
+
+.text--mouse {
+  color: hsl(var(--mouse));
+}
+
+.text--hippo {
+  color: hsl(var(--hippo));
+}
+
+.text--elephant {
+  color: hsl(var(--elephant));
+}
+
+.text--pinguine {
+  color: hsl(var(--pinguine));
+}
+
+.text--tiger {
+  color: hsl(var(--tiger));
+}
+
+.text--owl {
+  color: hsl(var(--owl));
+}
+
+.text--bat {
+  color: hsl(var(--bat));
+}
+
+.text--wale {
+  color: hsl(var(--wale));
+}
+
+.text--singing-bird {
+  color: hsl(var(--singing-bird));
+}
+
+.text--zebra {
+  color: hsl(var(--zebra));
+}
+
+.text--seal {
+  color: hsl(var(--seal));
+}
+
+svg {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.background--monkey {
+  background-color: hsla(var(--monkey), var(--opacity-background-aminal-cards));
+}
+
+.background--bear {
+  background-color: hsla(var(--bear), var(--opacity-background-aminal-cards));
+}
+
+.background--buffalo {
+  background-color: hsla(var(--buffalo), var(--opacity-background-aminal-cards));
+}
+
+.background--flamingo {
+  background-color: hsla(var(--flamingo), var(--opacity-background-aminal-cards));
+}
+
+.background--goat {
+  background-color: hsla(var(--goat), var(--opacity-background-aminal-cards));
+}
+
+.background--chameleon {
+  background-color: hsla(var(--chameleon), var(--opacity-background-aminal-cards));
+}
+
+.background--cat {
+  background-color: hsla(var(--cat), var(--opacity-background-aminal-cards));
+}
+
+.background--koala {
+  background-color: hsla(var(--koala), var(--opacity-background-aminal-cards));
+}
+
+.background--crocodile {
+  background-color: hsla(var(--crocodile), var(--opacity-background-aminal-cards));
+}
+
+.background--jellyfish {
+  background-color: hsla(var(--jellyfish), var(--opacity-background-aminal-cards));
+}
+
+.background--quail {
+  background-color: hsla(var(--quail), var(--opacity-background-aminal-cards));
+}
+
+.background--lion {
+  background-color: hsla(var(--lion), var(--opacity-background-aminal-cards));
+}
+
+.background--mouse {
+  background-color: hsla(var(--mouse), var(--opacity-background-aminal-cards));
+}
+
+.background--hippo {
+  background-color: hsla(var(--hippo), var(--opacity-background-aminal-cards));
+}
+
+.background--elephant {
+  background-color: hsla(var(--elephant), var(--opacity-background-aminal-cards));
+}
+
+.background--pinguine {
+  background-color: hsla(var(--pinguine), var(--opacity-background-aminal-cards));
+}
+
+.background--tiger {
+  background-color: hsla(var(--tiger), var(--opacity-background-aminal-cards));
+}
+
+.background--owl {
+  background-color: hsla(var(--owl), var(--opacity-background-aminal-cards));
+}
+
+.background--bat {
+  background-color: hsla(var(--bat), var(--opacity-background-aminal-cards));
+}
+
+.background--wale {
+  background-color: hsla(var(--wale), var(--opacity-background-aminal-cards));
+}
+
+.background--singing-bird {
+  background-color: hsla(var(--singing-bird), var(--opacity-background-aminal-cards));
+}
+
+.background--zebra {
+  background-color: hsla(var(--zebra), var(--opacity-background-aminal-cards));
+}
+
+.background--seal {
+  background-color: hsla(var(--seal), var(--opacity-background-aminal-cards));
+}
+
+
+
+
+
