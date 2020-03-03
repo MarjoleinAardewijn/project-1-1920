@@ -1,8 +1,10 @@
 import {api} from "./api.js";
+import {data as dataModule} from "./data.js";
 
 export const router = {
 
     handler: async function() {
+        // dataModule.clear();
         this.route();
     },
 
@@ -12,10 +14,29 @@ export const router = {
     route: function() {
         routie(
             ':animal', animal => {
-                api.getData(animal);
+
+                if (localStorage.getItem(animal) === null) {
+                    console.log('getData');
+                    this.dataFromFetch(animal);
+                } else {
+                    console.log('local');
+                    this.dataFromLocalStorage(animal);
+                }
                 this.updateUI(animal);
             }
         );
+    },
+
+    dataFromFetch: async function(animal) {
+        return await api.getData(animal);
+    },
+
+    dataFromLocalStorage: function(animal) {
+        let animals = dataModule.getItem(animal);
+        console.log('getItem: ', animals);
+        let parseAnimal = dataModule.parse(animals);
+        console.log('parseAnimal: ', parseAnimal);
+        return parseAnimal;
     },
 
     /**
