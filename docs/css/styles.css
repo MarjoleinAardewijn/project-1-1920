@@ -67,13 +67,6 @@ main {
 }
 
 .text {
-  display: none;
-
-  text-transform: uppercase;
-  font-size: 26px;
-}
-
-.card:hover .text{
   position: absolute;
   display: flex;
   justify-content: flex-start;
@@ -81,6 +74,18 @@ main {
 
   width: inherit;
   height: inherit;
+
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.card:hover .text{
+  display: none;
+}
+
+svg {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .text--monkey {
@@ -173,11 +178,6 @@ main {
 
 .text--seal {
   color: hsl(var(--seal));
-}
-
-svg {
-  max-width: 100px;
-  max-height: 100px;
 }
 
 .background--monkey {
