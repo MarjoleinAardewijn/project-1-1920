@@ -13,26 +13,25 @@ export const router = {
      */
     route: function() {
         routie(
-            ':animal', animal => {
-
-                if (localStorage.getItem(animal) === null) {
+            ':query', query => {
+                if (localStorage.getItem(query) === null) {
                     console.log('getData');
-                    this.dataFromFetch(animal);
+                    this.dataFromFetch(query);
                 } else {
                     console.log('local');
-                    this.dataFromLocalStorage(animal);
+                    this.dataFromLocalStorage(query);
                 }
-                this.updateUI(animal);
+                this.updateUI(query);
             }
         );
     },
 
-    dataFromFetch: async function(animal) {
-        return await api.getData(animal);
+    dataFromFetch: async function(query) {
+        return await api.getData(query);
     },
 
-    dataFromLocalStorage: function(animal) {
-        let animals = dataModule.getItem(animal);
+    dataFromLocalStorage: function(query) {
+        let animals = dataModule.getItem(query);
         console.log('getItem: ', animals);
         let parseAnimal = dataModule.parse(animals);
         console.log('parseAnimal: ', parseAnimal);

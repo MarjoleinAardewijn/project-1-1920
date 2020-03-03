@@ -1,14 +1,5 @@
 export const data = {
     /**
-     * Function to get the stored data back from localStorage.
-     *
-     * @param key -> the key which the data was stored with.
-     */
-    getItem: function (key) {
-        return localStorage.getItem(key);
-    },
-
-    /**
      * Function to store the data in localStorage.
      *
      * @param key -> name of stored data
@@ -16,6 +7,15 @@ export const data = {
      */
     setItem: function (key, data) {
         localStorage.setItem(key, JSON.stringify(data));
+    },
+
+    /**
+     * Function to get the stored data back from localStorage.
+     *
+     * @param key -> the key which the data was stored with.
+     */
+    getItem: function (key) {
+        return localStorage.getItem(key);
     },
 
     /**
