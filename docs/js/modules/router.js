@@ -1,4 +1,5 @@
 import {api} from "./api.js";
+import {render} from "./render.js";
 import {data as dataModule} from "./data.js";
 
 export const router = {
@@ -13,29 +14,19 @@ export const router = {
      */
     route: function() {
         routie(
-            ':query', query => {
+            ':query', async query => {
                 if (localStorage.getItem(query) === null) {
                     console.log('getData');
-                    this.dataFromFetch(query);
+                    const data = await api.dataFromFetch(query);
+                    await render.overview('title', 'books', query, data);
                 } else {
                     console.log('local');
-                    this.dataFromLocalStorage(query);
+                    const data = await api.dataFromLocalStorage(query);
+                    await render.overview('title', 'books', query, data);
                 }
                 this.updateUI(query);
             }
         );
-    },
-
-    dataFromFetch: async function(query) {
-        return await api.getData(query);
-    },
-
-    dataFromLocalStorage: function(query) {
-        let animals = dataModule.getItem(query);
-        console.log('getItem: ', animals);
-        let parseAnimal = dataModule.parse(animals);
-        console.log('parseAnimal: ', parseAnimal);
-        return parseAnimal;
     },
 
     /**
@@ -47,8 +38,11 @@ export const router = {
     updateUI: function (route) {
         if(document.querySelector('a[data-route].active')){
             document.querySelector('a[data-route].active').classList.remove('active');
+            document.querySelector('.results.active').classList.remove('active');
         }
         let activeDiv = document.querySelector(`a[data-route=${route}]`);
+        let activeSection = document.querySelector(`.results`);
         activeDiv.classList.add('active');
+        activeSection.classList.add('active');
     }
 };

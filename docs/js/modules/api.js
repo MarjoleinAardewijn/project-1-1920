@@ -7,9 +7,12 @@ const cors = 'https://cors-anywhere.herokuapp.com/',
     detail = 'Default',
     refine = '&refine=true',
     facet = '&facet=',
-    // youth = 'doelgroep(ageYouth)',
-    // schoolGenre = 'genre(school)',
-    animalTopic = 'topic(dieren)',
+    youth = 'doelgroep(ageYouth)',
+    // youghAdults = 'doelgroep(ageYoungAdults)',
+    // genre = 'genre(dieren)',
+    // topic = 'topic(dieren)',
+    // type = 'type(book)',
+    classification = 'classification:informatieboek',
     config = {
         Authorization: `Bearer ${secret}`
     };
@@ -17,18 +20,30 @@ const cors = 'https://cors-anywhere.herokuapp.com/',
 export const api = {
 
     getData: async function(query) {
-        const url = `${cors}${endpoint}${query}&authorization=${key}&detaillevel=${detail}${refine}${facet}${animalTopic}&output=json`;
+        const url = `${cors}${endpoint}${classification}%20${query}&authorization=${key}&detaillevel=${detail}${refine}${facet}${youth}&output=json`;
 
         try {
             const response = await fetch(url, config);
             const data = await response.json();
             console.log(data);
-            await dataModule.setItem(query, data);
+            await dataModule.setItem(query, data.results);
             console.log('setItem: ', query);
-            return await data;
+            return await data.results;
         } catch (err) {
             console.log('Error: ', err);
         }
-    }
+    },
+
+    dataFromFetch: async function(query) {
+        return await api.getData(query);
+    },
+
+    dataFromLocalStorage: function(query) {
+        let animals = dataModule.getItem(query);
+        console.log('getItem: ', animals);
+        let parseAnimal = dataModule.parse(animals);
+        console.log('parseAnimal: ', parseAnimal);
+        return parseAnimal;
+    },
 
 };
