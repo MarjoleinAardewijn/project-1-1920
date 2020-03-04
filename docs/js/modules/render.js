@@ -1,4 +1,5 @@
-const book = document.querySelector('.books'),
+const main = document.querySelector('main'),
+    book = document.querySelector('.books'),
     title = document.querySelector('.title');
 
 export const render = {
@@ -15,19 +16,23 @@ export const render = {
         console.dir(results);
         results.forEach((item, i) => {
             const html = `
-                <article>
-                  <h2>${item.titles[0]}</h2>
-                  <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
-                  <img src="${
-                    item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
-                    }">
+                <article class="book">
+                    <div class="book-inner">
+                        <div class="book-front">
+                            <img src="${item.coverimages ? item.coverimages[1] : 'Geen image'}">
+                        </div>
+                        <div class="book-back">
+                            <h2>${item.titles[0]}</h2>
+                            <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
+                        </div>
+                    </div>
                 </article>
             `;
             book.insertAdjacentHTML('beforeend', html);
         });
     },
 
-    overview: function(elementIdHeader, elementIdBooks, query, data) {
+    details: function(elementIdHeader, elementIdBooks, query, data) {
         console.log(data.length);
         if(data.length !== 0) {
             this.remove(elementIdHeader);
