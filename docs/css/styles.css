@@ -1,6 +1,5 @@
 :root {
-  --dark: #000;
-  --course: #00CD84;
+  --dark: #333;
   --light: #f5f5f5;
 
   --opacity-background-aminal-cards: 0.25;
@@ -36,7 +35,7 @@
 
 body {
   background-color: var(--light);
-  color: var(--light);
+  color: var(--dark);
   font-family: Roboto, sans-serif;
   font-size: 1.5em;
   line-height: 1.5;
@@ -272,7 +271,29 @@ svg {
   background-color: hsla(var(--seal), var(--opacity-background-aminal-cards));
 }
 
+.results {
+  display: none;
+}
 
+main,
+.results.active {
+  height: 100vh;
+  overflow-y: auto;
+}
 
+.results.active {
+  position: fixed;
+  top: 0;
+  background-color: var(--light);
 
+  display: flex;
+  flex-direction: column;
 
+  width: 100vw;
+}
+
+.books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
