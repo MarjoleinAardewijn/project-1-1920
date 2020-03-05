@@ -159,7 +159,7 @@ The sources I used the most during the development of the app are:
 - [Rainbow Text](https://w3bits.com/rainbow-text/).
 - [Hover Effect](https://codepen.io/stoic25/pen/xwVZyo).
 - [README](https://github.com/DanielvandeVelde/functional-programming) from Daniel van de Velde.
-- Mark from OBA for the extra documantation info.
+- Mark from OBA for the extra API documantation.
 - [Freepik](https://www.freepik.com/) for all the SVGs.
 
 
