@@ -339,7 +339,6 @@ main.active {
   justify-content: center;
 }
 
-/*https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 .book {
   background-color: transparent;
   width: 270px;
@@ -410,7 +409,6 @@ article:nth-child(4n+4) .book-back {
   padding: 1rem 1rem 0 1rem;
 }
 
-/*https://w3bits.com/rainbow-text/*/
 .rainbow-text {
   background-image: linear-gradient(to left, hsl(var(--pinguine)), hsl(var(--koala)), hsl(var(--mouse)), hsl(var(--flamingo)), hsl(var(--cat)), hsl(var(--tiger)), hsl(var(--crocodile)));
   -webkit-background-clip: text;
