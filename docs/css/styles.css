@@ -1,9 +1,7 @@
 :root {
-  --dark: #333;
-  --light: #f5f5f5;
-
+  --dark: hsl(0, 0%, 20%);
+  --light: hsl(0, 0%, 96%);
   --opacity-background-aminal-cards: 0.25;
-
   --monkey: 37, 38%, 58%;
   --bear: 15, 36%, 36%;
   --buffalo: 15, 36%, 36%;
@@ -37,25 +35,32 @@ body {
   background-color: var(--light);
   color: var(--dark);
   font-family: Roboto, sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5;
-  /*margin: 0;*/
+  line-height: 1.2;
 }
 
-p {
-  font-size: 16px;
+h1 {
+  font-size: 36px;
 }
 
 h2{
   font-size: 20px;
 }
 
+p {
+  font-size: 16px;
+}
+
+/*
+  ------------------------------------------------------------------------------
+    Overview Styling
+  ------------------------------------------------------------------------------
+ */
+
 main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
   width: 80%;
   margin: 10vh auto;
 }
@@ -63,14 +68,17 @@ main {
 .card {
   width: 150px;
   height: 150px;
-
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
   border-radius: 50%;
-
   margin: 1.5rem;
+  transition: all .3s ease-in-out;
+  line-height: 0.8;
+}
+
+.card:hover{
+  border-radius: 4px;
 }
 
 .text {
@@ -78,16 +86,13 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-
   width: inherit;
   height: inherit;
-
   text-transform: uppercase;
-  font-size: 20px;
 }
 
-.card:hover .text{
-  display: none;
+.text p {
+  font-size: 20px;
 }
 
 svg {
@@ -279,6 +284,12 @@ svg {
   background-color: hsla(var(--seal), var(--opacity-background-aminal-cards));
 }
 
+/*
+  ------------------------------------------------------------------------------
+    Details Styling
+  ------------------------------------------------------------------------------
+ */
+
 .results {
   display: none;
 }
@@ -292,12 +303,39 @@ main.active {
   flex-direction: column;
 }
 
+.title {
+  margin: 10vh 0 5vh 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.link-back {
+  position: fixed;
+  text-decoration: none;
+  color: hsl(var(--bat));
+  text-transform: uppercase;
+  font-size: 22px;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: hsl(0, 0%, 85%);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 50px;
+  z-index: 999;
+}
+
+.far {
+  margin: 0 0.5rem;
+}
+
+.link-back span {
+  margin-right: 0.5rem;
+}
+
 .books {
   display: flex;
   flex-flow: row wrap;
-
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 10vh auto;
   justify-content: center;
 }
 
@@ -307,8 +345,7 @@ main.active {
   width: 270px;
   height: 450px;
   perspective: 1000px;
-
-  margin: 0.5em;
+  margin: 0.5rem;
 }
 
 .book-inner {
@@ -318,6 +355,7 @@ main.active {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 4px;
 }
 
 .book:hover .book-inner {
@@ -332,6 +370,7 @@ main.active {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  z-index: 998;
 }
 
 .book-front {
@@ -344,21 +383,57 @@ main.active {
 }
 
 .book-back {
-  background-color: var(--light);
-  transform: rotateY(-180deg);
-
   flex-direction: column;
+  background-color: hsla(var(--flamingo), var(--opacity-background-aminal-cards));
+  color: hsl(var(--flamingo));
+  transform: rotateY(-180deg);
+  overflow-y: auto;
 }
 
-.book-back p {
-  overflow-y: auto;
+article:nth-child(2n+2) .book-back {
+  background-color: hsla(var(--wale), var(--opacity-background-aminal-cards));
+  color: hsl(var(--wale));
+}
+
+article:nth-child(3n+3) .book-back {
+  background-color: hsla(var(--tiger), var(--opacity-background-aminal-cards));
+  color: hsl(var(--tiger));
+}
+
+article:nth-child(4n+4) .book-back {
+  background-color: hsla(var(--crocodile), var(--opacity-background-aminal-cards));
+  color: hsl(var(--crocodile));
 }
 
 .book-back h2,
 .book-back p {
-  padding: 0.5em;
+  padding: 1rem 1rem 0 1rem;
 }
 
-.title {
+/*https://w3bits.com/rainbow-text/*/
+.rainbow-text {
+  background-image: linear-gradient(to left, hsl(var(--pinguine)), hsl(var(--koala)), hsl(var(--mouse)), hsl(var(--flamingo)), hsl(var(--cat)), hsl(var(--tiger)), hsl(var(--crocodile)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rainbow-text-animated {
+  background-image: repeating-linear-gradient(45deg, hsl(var(--pinguine)), hsl(var(--koala)), hsl(var(--mouse)), hsl(var(--flamingo)), hsl(var(--cat)), hsl(var(--tiger)), hsl(var(--crocodile)));
   text-align: center;
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 8s ease infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
