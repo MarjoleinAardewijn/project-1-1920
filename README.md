@@ -146,6 +146,7 @@ The sources I used the most during the development of the app are:
 - [W3Bits](https://w3bits.com/).
 - [CodePen](https://codepen.io/).
 - [Freepik](https://www.freepik.com/).
+- [ResponsiveVoice.js](https://responsivevoice.org/api/).
 
 ## Credits
 
