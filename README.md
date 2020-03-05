@@ -1,8 +1,8 @@
 # Kids Search, Animal Edition
 
-![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview-v3.png "Overview")
+![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview.png "Overview")
 
-![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details-v3.png "Details")
+![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details.png "Details")
 
 ## Description
 
