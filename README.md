@@ -1,56 +1,158 @@
 # Project 1 @cmda-minor-web · 2019-2020
 
-## Zoek in de de collectie van de OBA
+![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview.png "Overview")
 
-Het project vindt plaats bij de Centrale OBA. Maandagochtend is om 10.30 uur de kickoff (10:15 uur inloop), vrijdag zijn de presentaties van de resultaten. In een week bouwt iedere student een eigen prototype dat bezoekers kan helpen om items uit de OBA collectie te vinden. Technieken geleerd bij [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) en [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) worden toegepast bij het bouwen van de de prototypes.
+![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details.png "Details")
 
-## Instructie voor het gebruiken van de API
+## Description
 
- [http://zoeken.oba.nl/api/v1](http://zoeken.oba.nl/api/v1)
- 
- Zie voorbeeld code in deze repository voor het aanspreken van de API.
+The Amsterdam Public Library (OBA) had a number of cases for which they wanted to see some solutions.
+One of those cases was a project helper. For this case I came up with the idea of making the search visual, 
+so that when children click on a topic the project helper will search for the books. For this prototype I 
+used animals for the topics. But of course this could easily be changed to other topics.
 
-## Programma
-We verzamelen maandagochtend om 10.15 op de 1e verdieping van de Centrale OBA, [Oosterdokskade 143](https://www.google.com/maps/place/OBA+library+of+Amsterdam/@52.3756983,4.9082087,15z/data=!4m2!3m1!1s0x0:0x6b97f693e6ecb494?ved=2ahUKEwioo6OrzubgAhWLNOwKHR6KDQgQ_BIwCnoECAYQCA).
+Furthermore, I also had the idea to ensure that when someone hovers over a topic with the
+mouse the word is will be spoken as well. This so that children who do not speak Dutch very well,
+not only see but also hear the word. Unfortunately I didn't have time for this during this project week, 
+but this would be a nice feature to add later.
 
-## Werkwijze en Criteria
-### Werkwijze
-Full-time week werken aan (technisch) bewijzen van een concept-idee. Vrijdag is de pitch! Student laat zien dat hij/zij de vakken [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) en [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) begrijpt en beheerst.
+## Table of Contents
 
-Iedere dag zijn er coaches aanwezig voor coaching en feedback. We sluiten de dag af met een stand up, om de status door te spreken. Waar ben je mee bezig? Loop je ergens vast of heb je hulp nodig? Waar sta je?
+* [Live Demo](#Live-demo)
+* [Usage](#Usage)
+* [API](#Api)
+* [Feature Wishlist](#Feature-Wishlist)
+* [Sources](#Sources)
+* [Credits](#Credits)
+* [Licence](#Licence)
 
-### Beoordeling
-Tijdens de beoordeling krijg je feedback op het resultaat en op je functioneren. De vakdocenten kijken naar je code en beoordelen In hoeverre je in het project laten zien dat je de bijhorende vakken beheerst en goed hebt toegepast. Lifely is geïnteresseerd in hoeverre je oplossing voldoet aan de eisen die zijzelf stellen aan hun producten. Misschien laat je wel wat zien waar ze zelf nog niet aan gedacht hebben?
+## Live Demo
 
-Het project telt als AVV mee met de Meesterproef.
+The live demo of the app can be found here:
+[Live Demo Link](https://marjoleinaardewijn.github.io/project-1-1920/).
 
-### Feedback over functioneren
-Je hebt een leergierig, gedreven en zelfredzame houding nodig om de minor te kunnen halen. Welke vaardigheden heb je laten zien? Onderzoekend vermogen? Creativiteit? Conceptueel? In hoeverre komen je houding en verworven vaardigheden overeen met wat een frontender in de praktijk nodig heeft?
+## Usage
 
-### Feedback over Web App from Scratch
-In het vak [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) heb je geleerd een web app te maken zonder frameworks of onnodige libraries, dus zoveel mogelijk met native HTML, CSS & JavaScript. Het eindproduct is een modulair opgezet prototype voor een single page web app. Data wordt opgehaald uit een externe API, waar nodig gemanipuleerd en vervolgens getoond in de Web App. Je leert hoe structuur aan te brengen in je code en hoe je hiermee 'from scratch' een web app kan maken.
+Go via the terminal to the folder you want the project to be placed:
 
-### Feedback over CSS to the Rescue
-In het vak [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) heb je geleerd over de (brede) scope van CSS, over Progressive Enhancement, de _cascase_, _inheritance_ en _specifity_. Het is belangrijk om deze basisprincipes van CSS goed te begrijpen. Niet alleen op praktisch niveau, ook op experimenteel niveau. Zonder goed begrip van de basisprincipes is CSS magisch en weird. Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil. En dat is nodig om webpagina’s vorm te geven met attention to detail; webpagina’s waar mensen blij van worden.
+```
+    cd Path/To/Folder
+```
 
-### Oplevering & criteria
-- Presentatie met je bevindingen bij de OBA. 
-- Github met je code en readme.
+Clone the repository and go to the project folder:
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+```
+    git clone https://github.com/MarjoleinAardewijn/web-app-from-scratch-1920.git && cd web-app-from-scratch-1920
+```
 
-<!-- ☝️ replace this description with a description of your own work -->
+After cloning the repository start your local server and run your `index.html` file.
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+## API
 
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
+For this project I used the [OBA-API](https://zoeken.oba.nl/api/v1/).
 
-<!-- Maybe a table of contents here? 📚 -->
+For getting the books from a specific topic I used the following API endpoint:
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+> https://cors-anywhere.herokuapp.com/https://zoeken.oba.nl/api/v1/search/?q=classification:informatieboek%20[query]&authorization=[api-key]&detaillevel=Default&refine=true&facet=doelgroep(ageYouth)&output=json
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+For the API to work you also need to a secret key:
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+```javascript
+config = {
+    Authorization: `Bearer [api-secret-key]`
+};
+```
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+And then, you need to give your fetch the parameters url **and** config:
+
+```javascript
+fetch(url, config)
+```
+
+After fetching the data, this will be returning the following data:
+
+![JSON Data](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/json-data.png "JSON Data")
+
+<details>
+<summary>Extra API Documentation (From Mark from OBA):</summary>
+
+Documentation [OBA-API](https://zoeken.oba.nl/api/v1/).
+
+The facet description on the help page is how it works in a standard installation. The facets have been adjusted for the OBA, so they must also be used specifically in this way.
+
+You can request which facets are available for each query by specifying the `& refine = true` parameter in the / search:
+
+```
+https://zoeken.oba.nl/api/v1/search/?q=boek&authorization=[api-key]&refine=true
+```
+
+By default no refine is done on the API search, because that is a bit faster and it is not always used. With `refine=true` on the url you see an extra piece in the output:
+
+```html
+<facets>
+    ...  
+    <facet id="Type">
+        <value count="422426" id="book" />
+        <value count="2059" id="dvdvideo" />
+        <value count="2186" id="movie" />
+        <value count="3678" id="largetype" />
+    </facet>
+    ...
+</facets>
+```
+
+This means if you only want books, you have to use this query:
+
+```
+https://zoeken.oba.nl/api/v1/search/?q=boek&authorization=[api-key]&facet=type(book)
+```
+
+If you also do things specifically for youth, you can piggyback on some of the functionality that we have created for OBAJunior, namely an index on a special youth classification that is in the catalog.
+
+You can see which values are in that index via the API:
+
+```
+https://zoeken.oba.nl/api/v1/index/classification/?authorization=[api-key]
+```
+
+So this is not a facet, but a search. You can do this search as follows:
+
+```
+https://zoeken.oba.nl/api/v1/search/?q=classification:prentenboek&authorization=[api-key]
+```
+
+You can also combine this with another search term, eg. `q=classification:picturebook%20tiger`. A space is equivalent to an `AND`, so with this search you will find all picture books with the word tiger in the title/description/etc.
+
+It is also possible to request facet totals without a search term, for example for the topic animals:
+[https://zoeken.oba.nl/?q=special%3Aall&dim=Topic(Dieren)/](https://zoeken.oba.nl/?q=special%3Aall&dim=Topic(Dieren)/)
+
+</details>
+
+## Feature Wishlist
+
+In the future I would like to add:
+
+- [ ] speaking words on hover.
+- [ ] responsive design.
+
+## Sources
+
+The sources I used the most during the development of the app are:
+- [W3Schools](https://www.w3schools.com/).
+- [W3Bits](https://w3bits.com/).
+- [CodePen](https://codepen.io/).
+
+## Credits
+
+- [Flip Cards](https://www.w3schools.com/howto/howto_css_flip_card.asp).
+- [Rainbow Text](https://w3bits.com/rainbow-text/).
+- [Hover Effect](https://codepen.io/stoic25/pen/xwVZyo).
+- [README](https://github.com/DanielvandeVelde/functional-programming) from Daniel van de Velde.
+- Mark from OBA for the extra documantation info.
+
+
+## Licence
+
+[MIT License](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/LICENSE.txt) 
+
+Copyright (c) 2020 Marjolein Aardewijn
