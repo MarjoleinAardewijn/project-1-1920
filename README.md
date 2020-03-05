@@ -1,4 +1,4 @@
-# Kids Search, Animal Edition
+# Kids Search: Animal Edition
 
 ![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview.png "Overview")
 
