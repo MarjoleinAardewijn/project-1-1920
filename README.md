@@ -28,7 +28,7 @@ Furthermore, when someone clicks on a topic the app will say "I found the follow
 
 ## To Do
 
-- [ ] Ask permission to use speakers for Text To Speech (TTS) feature.
+- [x] Ask permission to use speakers for Text To Speech (TTS) feature.
 
 ## Live Demo
 
