@@ -1,5 +1,6 @@
 import {api} from "./api.js";
 import {render} from "./render.js";
+import {tts} from "./tts.js";
 import {data as dataModule} from "./data.js";
 
 export const router = {
@@ -23,11 +24,13 @@ export const router = {
                     const data = await api.dataFromFetch(query);
                     await render.details('title', 'books', query, data);
                     this.updateDetailsUI(query);
+                    tts.speech(query);
                 } else {
                     console.log('local');
                     const data = await api.dataFromLocalStorage(query);
                     await render.details('title', 'books', query, data);
                     this.updateDetailsUI(query);
+                    tts.speech(query);
                 }
             }
         });
