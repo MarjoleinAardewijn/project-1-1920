@@ -17,13 +17,18 @@ Furthermore, when someone clicks on a topic the app will say "I found the follow
 
 ## Table of Contents
 
-* [Live Demo](#Live-demo)
+* [To Do](#To-Do)
+* [Live Demo](#Live-Demo)
 * [Usage](#Usage)
 * [API](#Api)
 * [Feature Wishlist](#Feature-Wishlist)
 * [Sources](#Sources)
 * [Credits](#Credits)
 * [Licence](#Licence)
+
+## To Do
+
+- [ ] Ask permission to use speakers for Text To Speech (TTS) feature.
 
 ## Live Demo
 
@@ -134,7 +139,7 @@ It is also possible to request facet totals without a search term, for example f
 
 In the future I would like to add:
 
-- [ ] Text To Speech (TTS): speaking words on hover.
+- [ ] TTS: speaking words on hover.
 - [ ] responsive design.
 - [ ] searching for other topics.
 - [ ] searching for subtopics.
