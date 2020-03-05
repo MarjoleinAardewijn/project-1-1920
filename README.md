@@ -13,10 +13,7 @@ One of those cases was a project helper. For this case I came up with the idea o
 so that when children click on a topic the project helper will search for the books. For this prototype I 
 used animals for the topics. But of course this could easily be changed to other topics.
 
-Furthermore, I also had the idea to ensure that when someone hovers over a topic with the
-mouse the word is will be spoken as well. This so that children who do not speak Dutch very well,
-not only see but also hear the word. Unfortunately I didn't have time for this during this project week, 
-but this would be a nice feature to add later.
+Furthermore, when someone clicks on a topic the app will say "I found the following books about [topic-name]". This so that children who do not speak Dutch very well, not only see but also hear how the topic is pronounced.
 
 ## Table of Contents
 
@@ -137,7 +134,7 @@ It is also possible to request facet totals without a search term, for example f
 
 In the future I would like to add:
 
-- [ ] speaking words on hover.
+- [ ] Text To Speech (TTS): speaking words on hover.
 - [ ] responsive design.
 - [ ] searching for other topics.
 - [ ] searching for subtopics.
