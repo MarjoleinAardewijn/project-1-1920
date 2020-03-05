@@ -44,7 +44,7 @@ Go via the terminal to the folder you want the project to be placed:
 Clone the repository and go to the project folder:
 
 ```
-    git clone https://github.com/MarjoleinAardewijn/web-app-from-scratch-1920.git && cd web-app-from-scratch-1920
+    git clone https://github.com/MarjoleinAardewijn/project-1-1920.git && cd web-app-from-scratch-1920
 ```
 
 After cloning the repository start your local server and run your `index.html` file.
