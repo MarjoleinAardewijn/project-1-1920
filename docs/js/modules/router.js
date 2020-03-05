@@ -23,14 +23,14 @@ export const router = {
                     console.log('getData');
                     const data = await api.dataFromFetch(query);
                     await render.details('title', 'books', query, data);
-                    this.updateDetailsUI(query);
                     tts.speech(query);
+                    this.updateDetailsUI(query);
                 } else {
                     console.log('local');
                     const data = await api.dataFromLocalStorage(query);
                     await render.details('title', 'books', query, data);
-                    this.updateDetailsUI(query);
                     tts.speech(query);
+                    this.updateDetailsUI(query);
                 }
             }
         });
