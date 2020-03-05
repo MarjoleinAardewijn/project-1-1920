@@ -1,5 +1,7 @@
 # Kids Search: Animal Edition
 
+Visual search for finding animal related books for school projects.
+
 ![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview.png "Overview")
 
 ![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details.png "Details")
