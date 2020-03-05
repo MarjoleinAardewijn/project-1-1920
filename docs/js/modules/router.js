@@ -13,20 +13,35 @@ export const router = {
      * Function to update the hash depending on which painting is clicked, using Routie.
      */
     route: function() {
-        routie(
-            ':query', async query => {
+        routie({
+            '': () => {
+                this.updateOverviewUI();
+            },
+            ':query': async query => {
                 if (localStorage.getItem(query) === null) {
                     console.log('getData');
                     const data = await api.dataFromFetch(query);
                     await render.details('title', 'books', query, data);
+                    this.updateDetailsUI(query);
                 } else {
                     console.log('local');
                     const data = await api.dataFromLocalStorage(query);
                     await render.details('title', 'books', query, data);
+                    this.updateDetailsUI(query);
                 }
-                this.updateUI(query);
             }
-        );
+        });
+    },
+
+    /**
+     * Function to remove all active classes.
+     */
+    updateOverviewUI: function () {
+        if(document.querySelector('a[data-route].active')){
+            document.querySelector('a[data-route].active').classList.remove('active');
+            document.querySelector('.results.active').classList.remove('active');
+            document.querySelector(`main`).classList.remove('active');
+        }
     },
 
     /**
@@ -35,7 +50,7 @@ export const router = {
      *
      * @param route
      */
-    updateUI: function (route) {
+    updateDetailsUI: function (route) {
         if(document.querySelector('a[data-route].active')){
             document.querySelector('a[data-route].active').classList.remove('active');
             document.querySelector('.results.active').classList.remove('active');
