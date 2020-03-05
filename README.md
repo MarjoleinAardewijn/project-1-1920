@@ -1,4 +1,4 @@
-# Project 1 @cmda-minor-web · 2019-2020
+# Kids Search, Animal Edition
 
 ![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/readme/images/overview-v2.png "Overview")
 
