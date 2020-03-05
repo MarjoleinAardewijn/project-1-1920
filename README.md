@@ -1,8 +1,8 @@
 # Kids Search, Animal Edition
 
-![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/readme/images/overview-v2.png "Overview")
+![Overview](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/overview-v3.png "Overview")
 
-![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details.png "Details")
+![Details](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/details-v3.png "Details")
 
 ## Description
 
@@ -30,6 +30,9 @@ but this would be a nice feature to add later.
 
 The live demo of the app can be found here:
 [Live Demo Link](https://marjoleinaardewijn.github.io/project-1-1920/).
+
+![Live Demo](https://github.com/MarjoleinAardewijn/project-1-1920/blob/master/images/project.png "Live Demo")
+
 
 ## Usage
 
@@ -134,6 +137,8 @@ In the future I would like to add:
 
 - [ ] speaking words on hover.
 - [ ] responsive design.
+- [ ] searching for other topics.
+- [ ] searching for subtopics.
 
 ## Sources
 
@@ -141,6 +146,7 @@ The sources I used the most during the development of the app are:
 - [W3Schools](https://www.w3schools.com/).
 - [W3Bits](https://w3bits.com/).
 - [CodePen](https://codepen.io/).
+- [Freepik](https://www.freepik.com/).
 
 ## Credits
 
@@ -149,6 +155,7 @@ The sources I used the most during the development of the app are:
 - [Hover Effect](https://codepen.io/stoic25/pen/xwVZyo).
 - [README](https://github.com/DanielvandeVelde/functional-programming) from Daniel van de Velde.
 - Mark from OBA for the extra documantation info.
+- [Freepik](https://www.freepik.com/) for all the SVGs.
 
 
 ## Licence
