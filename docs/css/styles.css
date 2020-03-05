@@ -34,7 +34,7 @@
 body {
   background-color: var(--light);
   color: var(--dark);
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.2;
 }
 
@@ -48,6 +48,13 @@ h2{
 
 p {
   font-size: 16px;
+}
+
+.logo {
+  width: 100px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
 }
 
 /*
